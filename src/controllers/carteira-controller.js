@@ -7,9 +7,9 @@ const Carteira = mongoose.model('Carteira');
 exports.getByConta = async (req, res, next) => {
     try {
         const carteira = await Carteira.find({
-            active:true
+            active: true
 
-        },'nameConta saldo')
+        }, 'nameConta saldo')
         return res.status(200).send(carteira);
 
     } catch (e) {
@@ -63,4 +63,16 @@ exports.put = async (req, res, next) => {
 
 };
 
+/*exports.delete = async (req, res, next) => {
+
+    try {
+        const carteira = await Carteira.findByIdAndRemove(req.params.id);
+        res.status(200).send({ message: 'wallet successfully removed' });
+
+
+    } catch (e) {
+        res.status(400).send({ error: 'error removing wallet' });
+
+    }
+}*/
 

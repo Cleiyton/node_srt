@@ -69,7 +69,7 @@ exports.delete = async (req, res, next) => {
 
 
     }catch(e){
-        return res.status(400).send({message:'error removing targets'})
+        return res.status(400).send({error:'error removing targets'})
 
         
     }
