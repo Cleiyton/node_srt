@@ -9,7 +9,11 @@ const Metas = mongoose.model('Metas');
 exports.getByMetas = async (req, res, next)=>{
 
     try{
-        const metas = await Metas.find({});
+        const metas = await Metas.find({
+
+                active:true
+
+        },'description valor data categoria');
 
         return res.status(200).send({metas});
 

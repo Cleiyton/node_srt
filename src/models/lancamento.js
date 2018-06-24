@@ -19,26 +19,32 @@ const schema = new Schema({
         required: true
     },
 
-    contaCartao:{
+    contaCartao: {
 
-        type:String,
-        required:true
+        type: String,
+        required: true
 
     },
 
-    categoria:{
-        type:String,
-        required:true
-        
+    categoria: {
+        type: String,
+        required: true
+
     },
 
+    tipo: {
+
+        type:String,
+        required:true
+    },
+    
     active: {
         type: Boolean,
         required: true,
         default: true
     }
 
-    
+
 
 
 });

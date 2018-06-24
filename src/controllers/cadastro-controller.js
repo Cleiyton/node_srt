@@ -31,7 +31,7 @@ exports.post = async (req, res, next) => {
 
         const cadastro = await Cadastro.create(req.body);
 
-        cadastro.password = undefined;  
+        cadastro.password = undefined;
 
         return res.status(201).send({ message: 'Cliente cadastrado com sucesso' });
 

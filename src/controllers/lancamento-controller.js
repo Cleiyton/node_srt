@@ -8,21 +8,53 @@ const Lancamento = mongoose.model('Lancamento');
 exports.getByLancamento = async (req, res, next) => {
 
     try {
-            const lancamento = await Lancamento.find({
+        const lancamento = await Lancamento.find({
 
-                active:true
-            },'description contaCartao valor');
+            active: true
+        }, 'description contaCartao valor categoria tipo');
 
-            return res.status(200).send({lancamento})
+        return res.status(200).send({ lancamento });
 
     } catch (e) {
 
-        return res.status(400).send({error:'error while listing expenses'})
+        return res.status(400).send({ error: 'error while listing expenses' })
 
 
 
     }
- 
+
+}
+
+exports.getByDespesas = async (req, res, next) => {
+    try {
+        const lancamento = await Lancamento.find({
+            tipo: 'despesas'
+        }, 'description contaCartao valor categoria');
+
+        return res.status(200).send({ lancamento });
+    } catch (e) {
+
+        return res.status(400).send({ error: 'error while listing expenses' })
+
+    }
+
+}
+
+
+exports.getByReceita = async(req, res, next)=>{
+
+    try{
+
+        const lancamento =await Lancamento.find({
+
+            tipo:'receita'
+
+        },'description contaCartao valor categoria' );
+        return res.status(200).send({ lancamento });
+    }catch(e){
+        return res.status(400).send({ error: 'error while listing expenses' })
+
+    }
 }
 
 exports.post = async (req, res, next) => {
