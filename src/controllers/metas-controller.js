@@ -13,7 +13,7 @@ exports.getByMetas = async (req, res, next)=>{
 
                 active:true
 
-        },'description valor data categoria');
+        },'description valor data categoria contaCartao');
 
         return res.status(200).send({metas});
 

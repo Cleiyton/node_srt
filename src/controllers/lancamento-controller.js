@@ -11,7 +11,7 @@ exports.getByLancamento = async (req, res, next) => {
         const lancamento = await Lancamento.find({
 
             active: true
-        }, 'description contaCartao valor categoria tipo');
+        }, 'description contaCartao valor categoria tipo data');
 
         return res.status(200).send({ lancamento });
 
@@ -28,7 +28,7 @@ exports.getByDespesas = async (req, res, next) => {
     try {
         const lancamento = await Lancamento.find({
             tipo: 'despesas'
-        }, 'description contaCartao valor categoria');
+        }, 'description contaCartao valor categoria data');
 
         return res.status(200).send({ lancamento });
     } catch (e) {
@@ -48,7 +48,7 @@ exports.getByReceita = async(req, res, next)=>{
 
             tipo:'receita'
 
-        },'description contaCartao valor categoria' );
+        },'description contaCartao valor categoria data' );
         return res.status(200).send({ lancamento });
     }catch(e){
         return res.status(400).send({ error: 'error while listing expenses' })
