@@ -24,7 +24,6 @@ exports.getByLancamento = async (req, res, next) => {
     }
 
 }
-
 exports.getByDespesas = async (req, res, next) => {
     try {
         const lancamento = await Lancamento.find({
@@ -56,6 +55,8 @@ exports.getByReceita = async(req, res, next)=>{
 
     }
 }
+
+
 
 exports.post = async (req, res, next) => {
 
