@@ -32,6 +32,11 @@ const schema = new Schema({
 
     },
 
+        cadastro:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Cadastro'
+        },
+
     active: {
         type: Boolean,
         required: true,

@@ -26,6 +26,11 @@ const schema = new Schema({
 
     },
 
+    cadastro: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Cadastro'
+    },
+
     categoria: {
         type: String,
         required: true
@@ -34,10 +39,10 @@ const schema = new Schema({
 
     tipo: {
 
-        type:String,
-        required:true
+        type: String,
+        required: true
     },
-    
+
     active: {
         type: Boolean,
         required: true,

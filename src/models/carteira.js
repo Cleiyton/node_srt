@@ -6,9 +6,9 @@ const Schema = mongoose.Schema;
 
 const schema = new Schema({
 
-    nameConta:{
-        type:String,
-        required:true
+    nameConta: {
+        type: String,
+        required: true
     },
     tipodaconta: {
         type: String,
@@ -19,6 +19,10 @@ const schema = new Schema({
         required: true
     },
 
+    cadastro: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Cadastro'
+    },
     active: {
         type: Boolean,
         required: true,

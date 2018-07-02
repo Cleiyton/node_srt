@@ -6,10 +6,8 @@ const Carteira = mongoose.model('Carteira');
 
 exports.getByConta = async (req, res, next) => {
     try {
-        const carteira = await Carteira.find({
-            active: true
-
-        }, 'nameConta saldo')
+        const carteira = await Carteira.findById({"cadastro":req.params.id})
+        .populate('cadastro','name');
         return res.status(200).send(carteira);
 
     } catch (e) {
