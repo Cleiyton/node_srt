@@ -7,7 +7,7 @@ const controller = require('../controllers/carteira-controller');
 
 router.post('/contas', controller.post);
 router.put('/contas/:id', controller.put );
-router.get('/:id',controller.getByConta);
+router.get('/',controller.getByConta);
 //router.delete('/delete/:id', controller.delete);
 
 module.exports = router;    
