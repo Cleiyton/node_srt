@@ -10,7 +10,7 @@ exports.getByMetas = async (req, res, next)=>{
 
     try{
         const metas = await Metas.find({
-
+                cadastro:req.params.id,
                 active:true
 
         },'description valor data categoria contaCartao');

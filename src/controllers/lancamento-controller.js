@@ -9,7 +9,7 @@ exports.getByLancamento = async (req, res, next) => {
 
     try {
         const lancamento = await Lancamento.find({
-
+            cadastro:req.params.id,
             active: true
         }, 'description contaCartao valor categoria tipo data');
 
@@ -27,6 +27,7 @@ exports.getByLancamento = async (req, res, next) => {
 exports.getByDespesas = async (req, res, next) => {
     try {
         const lancamento = await Lancamento.find({
+            cadastro:req.params.id,
             tipo: 'despesas'
         }, 'description contaCartao valor categoria data');
 
@@ -45,7 +46,7 @@ exports.getByReceita = async(req, res, next)=>{
     try{
 
         const lancamento =await Lancamento.find({
-
+            cadastro:req.params.id,
             tipo:'receita'
 
         },'description contaCartao valor categoria data' );
